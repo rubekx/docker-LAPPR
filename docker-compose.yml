@@ -14,7 +14,8 @@ services:
       - ./configs/apache/host.conf:/etc/apache2/sites-available/host.conf
       - ./configs/apache/ports.conf:/etc/apache2/ports.conf
     ports:
-      - ${APP_PORT1}:80
+      - ${APP_PORT}:80
+      - ${VITE_PORT}:5173
       # - ${APP_WEBSOCKET_PORT}:6001 # websocket port
     networks:
       - rede
