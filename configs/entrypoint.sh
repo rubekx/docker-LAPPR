@@ -13,7 +13,7 @@ a2ensite host.conf
 chown -R 1000:www-data /var/www/html
 
 # Change to the app directory
-cd /var/www/html/app/
+cd /var/www/html
 
 # Install Laravel's dependencies
 echo "Install Laravel's dependencies:"
@@ -43,6 +43,9 @@ chmod -R ug+rwx storage bootstrap/cache
 # cp supervisor-services/laravel-websockets.conf /etc/supervisor/conf.d/
 # echo "restart supervisord."
 # /etc/init.d/supervisor start && supervisorctl reread && supervisorctl update
+
+cd /var/www/html/
+pm2 start ecosystem.config.cjs 
 
 # Restart Apache
 echo "Restart Apache:"
