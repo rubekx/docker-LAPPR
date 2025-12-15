@@ -22,7 +22,7 @@ services:
 
   postgres:
     container_name: ${POSTGRES_CONTAINER}
-    image: postgres
+    image: postgres:14-bullseye
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
