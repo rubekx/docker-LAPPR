@@ -45,6 +45,8 @@ chmod -R ug+rwx storage bootstrap/cache
 # /etc/init.d/supervisor start && supervisorctl reread && supervisorctl update
 
 cd /var/www/html/
+npm install
+npm run build
 pm2 start ecosystem.config.cjs 
 
 # Restart Apache
