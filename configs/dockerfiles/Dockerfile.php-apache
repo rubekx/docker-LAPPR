@@ -70,7 +70,7 @@ RUN pecl install -o -f redis \
 
 RUN docker-php-ext-install pcntl
 
-RUN npm install -g pm2
+# RUN npm install -g pm2
 
 CMD ["sh","/var/www/html/entrypoint.sh"]
 
