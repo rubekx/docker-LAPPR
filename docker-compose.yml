@@ -1,22 +1,38 @@
 version: "3.5"
 
 services:
-  app:
-    container_name: ${APP_CONTAINER}
-    build: .
+  app_api:
+    container_name: ${APP_API_CONTAINER}
+    build: 
+        context: configs/dockerfiles
+        dockerfile: 'Dockerfile.php-apache'
     restart: unless-stopped
     environment:
       - TZ=America/Fortaleza
     volumes:
-      - ./app:/var/www/html
+      - ./app-api:/var/www/html
       - ./configs/entrypoint.sh:/var/www/html/entrypoint.sh
       - ./configs/php/php.ini:/usr/local/etc/php/php.ini      
       - ./configs/apache/host.conf:/etc/apache2/sites-available/host.conf
       - ./configs/apache/ports.conf:/etc/apache2/ports.conf
     ports:
       - ${APP_PORT}:80
-      - ${VITE_PORT}:5173
-      # - ${APP_WEBSOCKET_PORT}:6001 # websocket port
+    networks:
+      - rede
+
+  app_front:
+    container_name: ${APP_FRONT_CONTAINER}
+    build: 
+        context: configs/dockerfiles
+        dockerfile: 'Dockerfile.node'
+    restart: unless-stopped
+    environment:
+      - TZ=America/Fortaleza
+    volumes:
+      - ./app-front:/app
+      - /app/node_modules 
+    ports:
+      - ${APP_FRONT_PORT}:3000
     networks:
       - rede
 

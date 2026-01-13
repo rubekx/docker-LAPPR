@@ -1,4 +1,7 @@
 app/
+app
+app-front/
+app-api/
 .env
 configs/postgres/database/
 configs/redis-server/data

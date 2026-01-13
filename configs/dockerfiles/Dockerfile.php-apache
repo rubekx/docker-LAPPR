@@ -49,12 +49,12 @@ RUN docker-php-ext-install gd
 RUN docker-php-ext-install gettext  
 
 # RUN apt-get update && apt-get install -y libc-client-dev libkrb5-dev && rm -r /var/lib/apt/lists/*
-# RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-#     && docker-php-ext-install imap
+# # RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+# #     && docker-php-ext-install imap
 
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+# RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 
-RUN apt-get update && apt-get install -y nodejs
+# RUN apt-get update && apt-get install -y nodejs
 
 RUN a2enmod rewrite
 
