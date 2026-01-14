@@ -28,7 +28,6 @@ services:
       - TZ=America/Fortaleza
     volumes:
       - ./app-front:/app
-      - /app/node_modules 
     ports:
       - ${APP_FRONT_PORT}:3000
     networks:
