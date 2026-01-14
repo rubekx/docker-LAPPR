@@ -1,5 +1,3 @@
-version: "3.5"
-
 services:
   app_api:
     container_name: ${APP_API_CONTAINER}
