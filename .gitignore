@@ -1,7 +1,7 @@
 app/
-app
 app-front/
 app-api/
+data-bkp/
 .env
 configs/postgres/database/
 configs/redis-server/data

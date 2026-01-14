@@ -30,6 +30,7 @@ services:
       - ./app-front:/app
     ports:
       - ${APP_FRONT_PORT}:3000
+      - ${VITE_PORT}:5173
     networks:
       - rede
 

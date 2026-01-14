@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# # Change to the Apache sites-available directory
-# cd /etc/apache2/sites-available/
+# Change to the Apache sites-available directory
+cd /etc/apache2/sites-available/
 
-# # Disable the default configuration file
-# a2dissite 000-default.conf
+# Disable the default configuration file
+a2dissite 000-default.conf
 
-# # Enable the host1 configuration file
-# a2ensite host.conf
+# Enable the host1 configuration file
+a2ensite host.conf
 
-# # Change ownership of the /var/www/html directory to user 1000 and group www-data
-# chown -R 1000:www-data /var/www/html
+# Change ownership of the /var/www/html directory to user 1000 and group www-data
+chown -R 1000:www-data /var/www/html
 
 # # Change to the app directory
-# cd /var/www/html
+cd /var/www/html
 
 # # Install Laravel's dependencies
 # echo "Install Laravel's dependencies:"
@@ -27,13 +27,13 @@
 # echo "Install Laravel's keys:"
 # php artisan key:generate
 
-# # Set file permissions in Laravel for storage and bootstrap/cache directories
-# echo "Set the file permissions in Laravel:"
-# chgrp -R www-data storage bootstrap/cache
+# Set file permissions in Laravel for storage and bootstrap/cache directories
+echo "Set the file permissions in Laravel:"
+chgrp -R www-data storage bootstrap/cache
 
-# # Set file permissions in Laravel for storage and bootstrap/cache directories
-# echo "Set the file permissions in Laravel:"
-# chmod -R ug+rwx storage bootstrap/cache
+# Set file permissions in Laravel for storage and bootstrap/cache directories
+echo "Set the file permissions in Laravel:"
+chmod -R ug+rwx storage bootstrap/cache
 
 # echo "restart completed."
 # /etc/init.d/cron restart
